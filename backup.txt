@@ -1,0 +1,55 @@
+base<-read.csv("campanas-verdes.csv", 
+               encoding = "UTF-8")%>%
+    mutate(dire=paste(calle_nombre, calle_altura, sep = " "))
+str(base)
+
+
+centro_reciclaje<-read.csv("centros-de-clasificacion-de-residuos.csv", 
+                           encoding = "UTF-8")
+str(centro_reciclaje)
+
+
+ui <- fluidPage(
+
+    titlePanel("Geolocalizacion de puntos de reciclado en CABA"),
+
+    leafletOutput("map"),
+    p(),
+    actionButton("recalc", "New points")
+)
+    
+
+server <- function(input, output) {
+
+    output$map <- renderLeaflet({
+      leaflet()%>%
+        addProviderTiles("OpenStreetMap.Mapnik")%>%
+        addMarkers(data=base,
+                   group = "campanas verdes",
+                   lng=~long, lat=~lat, 
+                   label=~dire,
+                   clusterOptions = markerClusterOptions(removeOutsideVisibleBounds = F))%>%
+        addMarkers(data=centro_reciclaje,
+                   group = "centros de reciclaje",
+                   lng=~Longitud, lat=~Latitud, 
+                   label=~Nombre,
+                   clusterOptions = markerClusterOptions(removeOutsideVisibleBounds = F))%>%
+        
+        addLayersControl(position = "bottomleft",
+                         overlayGroups = c("centros de reciclaje", "campanas verdes"))
+        
+    })
+}
+
+shinyApp(ui = ui, server = server)
+
+
+
+plot1<-ggplot(data = campanas_comunas, aes(x=reorder(factor(comuna),cantidad, sum) , y=cantidad, fill=comuna))+
+  theme(axis.text.x = element_text(angle = 45))+
+  labs(title = "cantidad de campanas verdes por comuna")+
+  geom_bar(stat = "identity", position = "identity")+
+  coord_flip()
+plot1
+
+ggplotly(plot1)

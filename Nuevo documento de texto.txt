@@ -1,0 +1,18 @@
+Mapa de puntos reciclables en CABA
+
+https://www.shinyapps.io/admin/#/dashboard
+
+Comparto un mapa interactivo que hice en #RStudio con los paquetes #Shiny, #Plotly y #Leaflet, con info sobre la ubicación geográfica de puntos reciclables en CABA. Nunca había usado Shiny y la verdad que fue un desafío, pero la comunidad de RStudio es inmensa, cuelga muchísima información y es ultra colaborativa. 
+La idea del mapa surgió porque hace unos días un amigo me comentó que empezó a separar residuos pero que tuvo el problema de no encontrar cerca de su casa ningún container o centro de reciclado y al buscar en la página del @Gobierno de la ciudad se encontró con un exel inmenso con muchisima información que no le terminó sirviendo. Ahí se prendió la lamparita y logré canalizar su necesidad en una página de rápido acceso y fácil consulta. Así que ahora no hay excusa para no reciclar(?)
+Con el correr de los días voy a ir emprolijando un poco la página y subiendo un poco más de gráficos con estadísticas varias, si alguien quiere algún tipo de información me puede escribir sin ningún problema.
+
+
+
+#reciclaje #mapas #datosabiertos #Rstudio #ecologia 
+
+
+Mapa de puntos reciclables en CABA
+
+https://www.shinyapps.io/admin/#/dashboard
+
+Comparto un mapa interactivo que hice en #RStudio con los paquetes #Shiny, #Plotly y #Leaflet, con info sobre la ubicación geográfica de puntos reciclables en CABA
