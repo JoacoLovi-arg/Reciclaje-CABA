@@ -1,0 +1,11 @@
+# Reciclaje-CABA :recycle:
+
+Muchas personas quieren empezar a aportar su granito de arena al cuidado del medioambiente pero no saben bien por dónde empezar. Un buen primer paso consiste en la separación de residuos ya que es una rutina que podemos adoptar desde nuestra casa. Pero uno de los mayores problemas a la hora de separar residuos es es no saber bien qué hacer luego con los residuos resiclables que se van acumulando.
+El fin de este mapa es mostrar a los ciudadanos lo cerca que pueden tener de su casa un contenedor de reciclables para así promover el hábito de separación de residuos.
+
+Recuerden que separar residuos se traduce en:
+-reducción a la mitad del volumen de basura que va de relleno 
+-reducción de emision de gases de invernadero que se producen en la biodegradacion de los reciclables 
+-reducción la explotacion de recursos naturales 
+-revalorizar un recurso que de otra manera se desperdicia 
+-generar trabajo para les recuperadores y todes les que intervienen en la cadena de reciclado
