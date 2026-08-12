@@ -31,4 +31,6 @@ WORKDIR /srv/shiny-server
 EXPOSE 3838
 
 # Corre la app directamente (sin shiny-server), escuchando en todas las interfaces
-CMD ["R", "-e", "shiny::runApp(host='0.0.0.0', port=as.numeric(Sys.getenv('PORT', 3838)))"]
+ENV SHINY_HOST=0.0.0.0
+
+CMD ["R", "-e", "options(shiny.host=Sys.getenv('SHINY_HOST'), shiny.port=as.numeric(Sys.getenv('PORT', 3838))); shiny::runApp('/srv/shiny-server')"]
