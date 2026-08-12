@@ -8,6 +8,8 @@ library(RColorBrewer)
 library(shiny)
 
 options(scipen = 999)
+options(shiny.host = "0.0.0.0")
+options(shiny.port = 5000)
 
 
 # 0 LEVANTO DATA ####
