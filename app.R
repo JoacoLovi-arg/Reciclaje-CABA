@@ -1,7 +1,6 @@
 library(tidyverse)
 library(janitor)
 library(readxl)
-library(rgdal)
 library(sf)
 library(leaflet)
 library(plotly)
@@ -9,6 +8,7 @@ library(RColorBrewer)
 library(shiny)
 
 options(scipen = 999)
+
 
 # 0 LEVANTO DATA ####
 
@@ -109,4 +109,6 @@ server <- function(input, output) {
     
 }
 
-shinyApp(ui = ui, server = server)
+# shinyApp(ui = ui, server = server)
+
+runApp(shinyApp(ui = ui, server = server), host = "127.0.0.1", port = 3838)
