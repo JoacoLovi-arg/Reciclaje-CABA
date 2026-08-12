@@ -28,4 +28,7 @@ WORKDIR /srv/shiny-server
 
 EXPOSE 3838
 
+# Anula el ENTRYPOINT heredado de rocker/shiny (/init), así el CMD de abajo
+# pasa a ser el proceso principal del contenedor
+ENTRYPOINT []
 CMD ["Rscript", "/srv/shiny-server/run.R"]
