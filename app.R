@@ -9,7 +9,7 @@ library(shiny)
 
 options(scipen = 999)
 options(shiny.host = "0.0.0.0")
-options(shiny.port = 5000)
+options(shiny.port = 1000)
 
 
 # 0 LEVANTO DATA ####
