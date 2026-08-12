@@ -16,10 +16,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libtiff5-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Detecta el codename de la distro (ej: jammy, noble, focal) y arma el repo binario de Posit
-RUN CODENAME=$(. /etc/os-release && echo "$VERSION_CODENAME") \
-    && echo "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/${CODENAME}/latest'))" >> /usr/lib/R/etc/Rprofile.site \
-    && echo "Usando repo: https://packagemanager.posit.co/cran/__linux__/${CODENAME}/latest"
+# Detecta el codename y la ruta real de R, y configura el repo binario de Posit
+RUN CODENAME=$(grep -oP '(?<=^VERSION_CODENAME=).+' /etc/os-release) \
+    && RPROFILE="$(R RHOME)/etc/Rprofile.site" \
+    && echo "Codename detectado: ${CODENAME}" \
+    && echo "Rprofile en: ${RPROFILE}" \
+    && echo "options(repos = c(CRAN = 'https://packagemanager.posit.co/cran/__linux__/${CODENAME}/latest'))" >> "${RPROFILE}"
 
 # Instala paquetes y aborta el build si alguno falla
 RUN R -e "install.packages(c('shiny','tidyverse','janitor','readxl','sf','leaflet','plotly','RColorBrewer')); \
