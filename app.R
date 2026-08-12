@@ -113,4 +113,4 @@ server <- function(input, output) {
 
 # shinyApp(ui = ui, server = server)
 
-runApp(shinyApp(ui = ui, server = server), host = "127.0.0.1", port = 3838)
+runApp(shinyApp(ui = ui, server = server))
